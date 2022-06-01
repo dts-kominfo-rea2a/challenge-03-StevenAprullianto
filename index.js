@@ -21,10 +21,25 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = (objectDataBelanjaan) =>{
+  let array = [];
+  for (let index = 0; index < objectDataBelanjaan.length; index++) {
+    array.push("- "+objectDataBelanjaan[index].nama+" x "+objectDataBelanjaan[index].kuantitas);
+  }
+
+  return array;
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = (objectDataBelanjaan) =>{
+    let totalharga = 0; // = 0 membuat variable dideklarasi sebagai Integer sehingga penjumlahan dpt berjalan, jika tidak akan menjadi "NaN" karna tidak tahu data typenya apa
+    for (let index = 0; index < objectDataBelanjaan.length; index++) {
+      const total = objectDataBelanjaan[index].harga * objectDataBelanjaan[index].kuantitas;
+      totalharga += total;
+    }
+    
+    return totalharga;
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
